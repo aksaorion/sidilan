@@ -1,0 +1,9 @@
+# Nyalakan mod_rewrite
+RewriteEngine On
+
+# Pastikan bahwa mod_rewrite bekerja hanya jika file atau direktori tidak ditemukan
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Aturan untuk menghapus .php dari semua URL di seluruh proyek
+RewriteRule ^([a-zA-Z0-9_/.-]+)$ $1.php [L]
